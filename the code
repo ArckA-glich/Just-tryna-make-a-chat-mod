@@ -1,0 +1,20 @@
+const chatContent = document.querySelector("#chat-content");
+if (chatContent) {
+  if (window.MutationObserver) {
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        const addedNodes = Array.from(mutation.addedNodes);
+        addedNodes.forEach((node) => {
+          const text = node.textContent.trim();
+            }
+          }
+        });
+      });
+    });
+    observer.observe(chatContent, observerConfig);
+  } else {
+    console.error("MutationObserver is not supported in this browser.");
+  }
+} else {
+  console.error("Chat content area not found.");
+}
